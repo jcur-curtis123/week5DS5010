@@ -1,4 +1,4 @@
-## 1. Reflection on Coding Process
+## 1. Reflection
 
 The coding process for this assignment involved implementing decision tree logic to calculate impurity and identify the best partition for splitting data, using the provided `training_data.csv` file.
 
@@ -12,7 +12,7 @@ I would say that this was a difficult assignment for me. I had some challenges i
 - Debugging the “division by zero” issue and ensuring the weighted impurity was correctly averaged across partitions was challenging
 - Interpreting what the “average key value” represented in relation to impurity took some time to understand — this was the beginning part of part 8. After understanding that we must create a threshold for the partitioned attributes, it became clear that the average numeric key values were the threshold. 
 
-**Purpose of the assignment**
+**Purpose of the assignment:**
 
 Yes, this homework assignment demonstrated how impurity measures (like Gini) drive decision tree splitting. It was helpful for the layout in steps, to understand how to build a project with many moving parts.
 
