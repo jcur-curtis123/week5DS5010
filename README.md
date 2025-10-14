@@ -45,7 +45,7 @@ AI Prompt:
 
 This prompt assisted me with clarifying the goal of the output, and the basis of the driver.py
 
-To further eloborate on how this prompt assisted me:
+To further elaborate on how this prompt assisted me:
 
 We need to partition the dataset in order to achieve the relative "best" attribute and we do this by calculating each partition's gini and impurity calculations
 
