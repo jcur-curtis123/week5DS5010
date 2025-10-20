@@ -1,7 +1,7 @@
 from src.parent_strategy import ParentStrategy
 
 '''
-import the parent class ParentStrategy - need weight and probability methods
+Import the parent class ParentStrategy - need weight and probability methods
 '''
 
 class CollectiveImpurityGini(ParentStrategy):
@@ -17,8 +17,10 @@ class CollectiveImpurityGini(ParentStrategy):
 
         '''
 
-        total_records = sum(len(group) for group in partition) # total number of numbers - len of elements in each group
+      
+        weights = self.calculate_weights(partition) # refactored for gini for weight variable given by calculate weights from parent_strategy
         total_gini = 0.0
+        index = 0
 
         for group in partition:
             '''
@@ -34,7 +36,9 @@ class CollectiveImpurityGini(ParentStrategy):
                 p_low = self.probability(group, "Low Risk")
 
                 gini = 1 - (p_high ** 2 + p_low ** 2) # gini formula
-                weight = len(group) / total_records 
+                weight = weights[index] # weight is implemented here similar to that of entropy
                 total_gini += weight * gini 
+            
+            index += 1 
 
-            return total_gini
+        return total_gini # fixed indentation level for gini return - gini should now return properly

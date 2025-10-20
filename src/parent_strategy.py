@@ -7,7 +7,14 @@ class ParentStrategy:
         ie; how often does "High Risk" show up in all records?
         '''
         count = 0
+
+        n = len(records)
+        
+        if n == 0: 
+            return 0
+        
         for i in records:
+
             '''
             define var i to access records param
 
@@ -34,12 +41,19 @@ class ParentStrategy:
         
         total = 0
 
-        for i in partition:
-            total = total + len(i)
+        for subset in partition:
+            total = total + len(subset)
+    
+        if total == 0:
+            result = []
+            for subset in partition:
+                result.append(0.5)
+            return result
+
 
         weights = []
-        for i in partition:
-            weight = len(i) / total
+        for subset in partition:
+            weight = len(subset) / total
             weights.append(weight) # append the weight to the list once calculated
 
         return weights
